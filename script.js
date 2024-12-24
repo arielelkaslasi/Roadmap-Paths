@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // Toggle mobile menu
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         nav.classList.toggle('active');
     });
 
-    // Handle dropdowns on mobile
     navItems.forEach(item => {
         const link = item.querySelector('.nav-link');
         const dropdown = item.querySelector('.dropdown-menu');
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const isOpen = item.classList.contains('active');
                     dropdown.style.display = isOpen ? 'block' : 'none';
                     
-                    // Close other open dropdowns
                     navItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -35,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
             hamburger.classList.remove('active');
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle header background on scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -58,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.hero-dots');
     let currentIndex = 0;
   
-    // Create dots
     images.forEach((_, index) => {
       const dot = document.createElement('div');
       dot.classList.add('hero-dot');
@@ -82,12 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
       setActiveImage(nextIndex);
     }
   
-    // Auto-advance every 3 seconds
     setInterval(nextImage, 3000);
 });
 
 
-// faq
 
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -99,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         question.addEventListener('click', () => {
             const isActive = question.classList.contains('active');
 
-            // Close all other open FAQs
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.querySelector('.faq-question').classList.remove('active');
@@ -107,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Toggle the clicked FAQ
             question.classList.toggle('active', !isActive);
             answer.classList.toggle('active', !isActive);
         });
@@ -117,12 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Create and append the canvas
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
 
-// Resize canvas to cover the viewport
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -131,7 +119,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-// Particle class
 class Particle {
     constructor(x, y) {
         this.x = x;
@@ -146,7 +133,7 @@ class Particle {
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
-        this.size *= 0.96; // Shrink over time
+        this.size *= 0.96; 
     }
 
     draw() {
@@ -159,7 +146,6 @@ class Particle {
 
 const particles = [];
 
-// Animation loop
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -175,7 +161,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Add particles on mouse move
 document.addEventListener('mousemove', (e) => {
     for (let i = 0; i < 5; i++) {
         const particle = new Particle(e.clientX, e.clientY);
@@ -184,3 +169,22 @@ document.addEventListener('mousemove', (e) => {
 });
 
 animate();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.guide-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateX(-5px)';
+            card.style.boxShadow = '0 6px 12px rgba(255, 102, 0, 0.15)';
+            card.style.transition = 'all 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateX(0)';
+            card.style.boxShadow = '0 2px 4px rgba(255, 102, 0, 0.1)';
+        });
+    });
+});
+
