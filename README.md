@@ -35,7 +35,7 @@
 ---
 
 ### **צור קשר**
-- **אתר**: [הכנס כתובת אתר]
+- **אתר**: https://arielelkaslasi.dev
 - **לינקדין**: https://www.linkedin.com/in/ariel-elkaslasi-1b6769299/
 - **אימייל**: arirl.elkaslasi@gmail.com
 
