@@ -195,8 +195,15 @@ ul {
 .header.scrolled .hamburger-inner::after {
     background-color: var(--text-color);
 }
+.mobilestepone {
+    display: none; 
+}
 
 @media (max-width: 768px) {
+    .mobilestepone {
+        display: block; 
+        
+    }
     .fas {
         margin-right: 10px;
     }
@@ -849,6 +856,7 @@ h1 {
     object-fit: cover;
     border-radius: 8px;
 }
+
 
 @media (max-width: 1024px) {
     .guide-section {
