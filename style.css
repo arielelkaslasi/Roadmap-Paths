@@ -392,7 +392,6 @@ ul {
 
 
 .faq {
-    height: 90vh;
     width: auto;
     position: relative;
         background: linear-gradient(45deg, #ffa726, #ff9800, #febe71);
@@ -703,7 +702,6 @@ ul {
 @media (max-width: 480px) {
     .faq {
         padding: 40px 10px;
-        height: 100vh;
     }
 
     .faq-container {
