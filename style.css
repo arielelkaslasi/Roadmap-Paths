@@ -199,6 +199,8 @@ ul {
     display: none; 
 }
 
+
+
 @media (max-width: 768px) {
     .mobilestepone {
         display: block; 
@@ -398,6 +400,7 @@ ul {
 
 }
 
+
 .hero {
     height: 100vh;
     width: 100%;
@@ -544,6 +547,8 @@ ul {
     background-color: white;
   }
   
+
+ 
   @media (max-width: 768px) {
     .hero-content {
       flex-direction: column-reverse;
@@ -909,17 +914,29 @@ a{
     color: #ff6600;
 }
 
-@media (orientation: landscape) {
+
+
+ 
+@media (max-width: 1000px) and (orientation: landscape) {
     .faq {
         height: auto;
     }
+    .hero-content {
+        flex-direction:row;
+        justify-content: center;
+        gap: 4%;
+      }
+    
+      .hero-image-container,
+      .hero-text {
+        width: 50%;
+        margin-top: 20px;
+        
+      }
     .hero-image-container {
         width: 40%;
-        height: 200px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        height: 60vh;
+
       }
    
       .hero-title {
@@ -929,4 +946,5 @@ a{
       .custom-shape-divider-bottom-1734942245 {
         width: 190%;
       }
+      
  }
